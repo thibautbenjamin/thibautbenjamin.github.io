@@ -64,7 +64,7 @@
              site-builder-sidepanel-pic
              "\" class=\"w3-center w3-circle\" style=\"max-width:60%\">"))
    (mk-html "div"
-            :class "w3-container w3-center w3-text-gray"
+            :class "w3-container w3-center w3-text-gray description"
             :body site-builder-sidepanel-description)
    (mk-html "div"
             :class "w3-container w3-large"

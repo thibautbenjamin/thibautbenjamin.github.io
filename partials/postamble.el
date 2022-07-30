@@ -66,7 +66,9 @@
            (concat
             (mk-html "div"
                      :class "w3-container w3-text-gray"
-                     :body (concat site-builder-site-name site-builder-sidepanel-description))
+                     :body (concat site-builder-site-name
+                                   ",&emsp;"
+                                   site-builder-sidepanel-description))
             (site-builder-footer-icons)
             (site-builder-footer-text))))
 

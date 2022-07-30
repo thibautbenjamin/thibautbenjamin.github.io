@@ -1,10 +1,40 @@
-#+title: What about a website purely in org?
+#+title: Thibaut Benjamin
 #+layout: "index"
 
+* Welcome to my personal webpage
 
+** Introduction
 
-* Hello World!
+I am currently a post-doctorate researcher in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs. Before that I was a PhD student at LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]], and I worked on a type theoretic definition of weak omega-categories.
 
-Is that better than Hugo?
+** Research Interests
 
-- I the website re-generated?
+My research interests lie in the intersection between computer science and mathematics. I am particularly interested in the semantics of these languages, and the connection it establishes between programming and reasonning via the Curry-Howard correspondence.
+
+I am particularly interested in all the languages whose semantics can be cleanly defined, and enjoy rich algebraic properties, like the functional languages, as I find those encourage good practice and high maintainability. I also like that these languages interact well with proof-assistants (I particularly use Agda and Coq).
+
+I am also interested in higher category theory and homotopy theory, as a way to understand equality and rewriting, as started by the development of homotopy type theory. 
+
+*** Keywords:
+
+- Programming language semantics
+- Logic
+- Category theory
+- Dependent type theory
+- Homotopy type theory
+- Formal methods
+- Proof-assistants
+
+** Other Scientific Interests
+
+Beside my work as a computer scientist, I am interested in science in general as I like to feel my understanding of the world evolve. I also like science history, to witness how ideas grew to be at the point they currently are. I particularly value science communication and I admire the content creators that can give access to beautiful and important science result to non-specialist.
+
+*** Teaching
+During my PhD I have supervised the practicals Java beginner’s class at Ecole Polytechnique for three years, and for its follow-up class for two years. I have also done tutoring sessions in python and algorithmics for one year. During this time, I tried to apply as much as possible all the techniques that I notice in good science communicators to provide a teaching that is motivating and to the point. Unfortunately, my current contract does not allow me to teach and I miss it.
+
+*** Free and open source software
+I support free and open source software. My personal experience with it has been that the paid alternative are often worse, albeit sometimes easier to begin. I try to contribute to the projects that I use when I can.
+
+# Local Variables:
+# cite-builder-layout: "index"
+# End:

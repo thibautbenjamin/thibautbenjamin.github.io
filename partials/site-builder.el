@@ -33,6 +33,7 @@
 (defcustom site-builder-base-directory "" nil)
 (defcustom site-builder-publishing-directory "" nil)
 (defcustom site-builder-menu-order "" nil)
+(defcustom site-builder-layout "" nil)
 
 (require 'htmlize)
 (require 'ox-publish)
@@ -46,23 +47,20 @@
        <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css\">
        <link rel=\"stylesheet\" href=\"style.css\" />")
 
+(setq org-html-content-class "content w3-container")
+
+(customize-set-variable 'org-html-toplevel-hlevel 1)
+
+
 (require 'preamble)
 (require 'postamble)
 (require 'formatting)
 
-(defun site-builder-find-layout ()
- (save-excursion
-   (goto-line 0)
-   (when (re-search-forward "#\\+layout:" nil t)
-     (string-trim (buffer-substring-no-properties (1+ (point))(line-end-position))))))
-
 (defun site-builder-layout ()
-  (let ((layout (site-builder-find-layout)))
-    (or layout "default")))
+    (or site-builder-layout "default"))
 
 (defun site-builder-layout-default ()
-  (let ((layout (site-builder-layout)))
-    (equal layout "default")))
+    (equal (site-builder-layout) "default"))
 
 (defun site-builder-set-format (backend)
   (when (eq backend 'html)
