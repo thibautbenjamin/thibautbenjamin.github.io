@@ -1,0 +1,24 @@
+#+title: What about a website purely in org?
+
+
+#+BEGIN_EXPORT html
+  <div class="w3-row">
+  <div class= "w3-col s1 m1 l1">
+    &nbsp;
+  </div>
+  <div class= "w3-col s10 m10 l10">
+#+END_EXPORT
+
+* Hello World!
+
+Is that better than Hugo?
+
+- I the website re-generated?
+ 
+  #+BEGIN_EXPORT html
+  </div>
+  <div class= "w3-col s1 m1 l1">
+    &nbsp;
+  </div>
+</div>
+#+END_EXPORT

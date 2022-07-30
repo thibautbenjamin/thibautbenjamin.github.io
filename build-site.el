@@ -1,0 +1,66 @@
+;;; build-site.el --- Building my website            -*- lexical-binding: t; -*-
+
+;; Copyright (C) 2022  thibaut
+
+;; Author: thibaut <thibaut@thibaut-Precision-5550>
+;; Keywords:
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;;
+
+;;; Code:
+
+(require 'package)
+(setq package-user-dir (expand-file-name "./.packages"))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; Initialize the package system
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install dependencies
+(package-install 'htmlize)
+
+(add-to-list 'load-path (concat default-directory "partials/"))
+(require 'site-builder)
+
+(customize-set-variable 'site-builder-sidepanel-pic "pic.jpeg")
+(customize-set-variable 'site-builder-sidepanel-description "Post doctorate researcher in computer science at CEA LIST")
+
+
+(setq org-publish-project-alist
+      (list
+       (list "org-site:main"
+             :recursive t
+             :base-directory "./content"
+             :publishing-function 'org-html-publish-to-html
+             :publishing-directory "./public"
+             :with-author t           ;; Don't include author name
+             :with-creator t            ;; Include Emacs and Org versions in footer
+             :with-toc nil                ;; Include a table of contents
+             :section-numbers nil       ;; Don't include section numbers
+             :time-stamp-file nil)))    ;; Don't include time stamp in file
+
+(org-publish-all t)
+
+
+(message "build complete")
+
+(provide 'build-site)
+;;; build-site.el ends here
