@@ -26,36 +26,29 @@
 
 (require 'mk-html)
 
-(setq my/site-title "THIBAUT BENJAMIN")
+(defun site-builder-main-pages ())
 
-(setq my/site-menu-content
-      (concat
-       (mk-html "a"
-                :class "w3-bar-item w3-button w3-large w3-hover-none w3-text-indigo"
-                :href "/"
-                :body (mk-html "b" :body my/site-title))
-       (mk-html "a"
-                :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right"
-                :href "/"
-                :body "Home")))
+(defun site-builder-menu-content ()
+  (concat
+   (mk-html "a"
+            :class "w3-bar-item w3-button w3-large w3-hover-none w3-text-indigo"
+            :href "/"
+            :body (mk-html "b" :body site-builder-site-name))
+   (mk-html "a"
+            :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right"
+            :href "/"
+            :body "Home")))
 
-(setq my/site-menu
-      (mk-html "div"
-               :class "w3-top w3-white topbar"
-               :body
-               (mk-html "div"
-                        :class "w3-topbar w3-border-indigo w3-white"
-                        :body
-                        (mk-html "div"
-                                 :class "w3-container w3-bar w3-border-bottom"
-                                 :body my/site-menu-content))))
-
-(customize-set-variable 'org-html-preamble t)
-
-(customize-set-variable
- 'org-html-preamble-format
- (list
-  (list "en" my/site-menu)))
+(defun site-builder-menu ()
+  (mk-html "div"
+           :class "w3-top w3-white topbar"
+           :body
+           (mk-html "div"
+                    :class "w3-topbar w3-border-indigo w3-white"
+                    :body
+                    (mk-html "div"
+                             :class "w3-container w3-bar w3-border-bottom"
+                             :body (site-builder-menu-content)))))
 
 (provide 'preamble)
 ;;; preamble.el ends here

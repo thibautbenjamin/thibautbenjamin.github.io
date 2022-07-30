@@ -40,25 +40,19 @@
 (add-to-list 'load-path (concat default-directory "partials/"))
 (require 'site-builder)
 
+(customize-set-variable 'site-builder-base-directory "./content")
+(customize-set-variable 'site-builder-publishing-directory "./public")
+
+(customize-set-variable 'site-builder-site-name "THIBAUT BENJAMIN")
 (customize-set-variable 'site-builder-sidepanel-pic "pic.jpeg")
 (customize-set-variable 'site-builder-sidepanel-description "Post doctorate researcher in computer science at CEA LIST")
+(customize-set-variable
+ 'site-builder-sidepanel-infos
+ '(("cv" "cv.pdf" "fa-solid fa-file-lines")
+   ("email" "mailto:thibaut.benjamin@polytechnique.edu" "fa-solid fa-envelope")
+   ("thibautbenjamin" "http://www.github.com/thibautbenjamin" "fa-brands fa-github")))
 
-
-(setq org-publish-project-alist
-      (list
-       (list "org-site:main"
-             :recursive t
-             :base-directory "./content"
-             :publishing-function 'org-html-publish-to-html
-             :publishing-directory "./public"
-             :with-author t           ;; Don't include author name
-             :with-creator t            ;; Include Emacs and Org versions in footer
-             :with-toc nil                ;; Include a table of contents
-             :section-numbers nil       ;; Don't include section numbers
-             :time-stamp-file nil)))    ;; Don't include time stamp in file
-
-(org-publish-all t)
-
+(site-builder-build-site)
 
 (message "build complete")
 

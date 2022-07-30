@@ -30,7 +30,8 @@
 (defcustom site-builder-site-name "" nil)
 (defcustom site-builder-author-name "" nil)
 (defcustom site-builder-sidepanel-infos "" nil)
-
+(defcustom site-builder-base-directory "" nil)
+(defcustom site-builder-publishing-directory "" nil)
 
 (require 'htmlize)
 (require 'ox-publish)
@@ -41,11 +42,32 @@
 (setq org-html-head-include-default-style nil)
 (setq org-html-head
       "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />
+       <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css\">
        <link rel=\"stylesheet\" href=\"style.css\" />")
 
 (require 'preamble)
 (require 'postamble)
 (require 'formatting)
+
+(defun site-builder-build-site ()
+
+  (setq org-publish-project-alist
+        (list
+         (list "org-site:main"
+               :recursive t
+               :base-directory site-builder-base-directory
+               :publishing-function 'org-html-publish-to-html
+               :publishing-directory site-builder-publishing-directory
+               :with-author t
+               :with-creator t
+               :with-toc nil
+               :section-numbers nil
+               :time-stamp-file nil)))
+
+(customize-set-variable 'org-html-preamble t)
+(customize-set-variable 'org-html-preamble-format (list (list "en" (site-builder-menu))))
+
+(org-publish-all t))
 
 
 (provide 'site-builder)

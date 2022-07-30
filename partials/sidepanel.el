@@ -26,12 +26,31 @@
 
 (require 'mk-html)
 
-
+(defun mk-sidepanel-info-entry (list)
+  (let ((name (car list))
+        (link (cadr list))
+        (icon (caddr list)))
+    (mk-html "div"
+             :class "w3-bar-item w3-button w3-hover-none"
+             :body
+             (concat
+              (when icon
+                (mk-html "a"
+                         :href link
+                         :body
+                         (mk-html "i"
+                                  :class icon)))
+              (mk-html "a"
+                       :href link
+                       :body name)))))
 
 (defun mk-sidepanel-infos ()
   (mk-html "div"
            :class "w3-bar-block w3-container"
-           :body "TODO"))
+           :body
+           (mapconcat #'mk-sidepanel-info-entry
+                      site-builder-sidepanel-infos
+                      "\n")))
 
 (defun mk-sidepanel ()
   (concat
@@ -49,11 +68,7 @@
             :body site-builder-sidepanel-description)
    (mk-html "div"
             :class "w3-container w3-large"
-            :body (mk-sidepanel-infos))
-
-
-   )
-  )
+            :body (mk-sidepanel-infos))))
 
 ;; <div class="w3-center infos"> Personal Information </div>
 ;; <center><img src={{ .Site.Params.pic }} class="w3-center w3-circle" style="max-width:60%"></center>
