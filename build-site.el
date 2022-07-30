@@ -44,6 +44,7 @@
 (customize-set-variable 'site-builder-publishing-directory "./public")
 
 (customize-set-variable 'site-builder-site-name "THIBAUT BENJAMIN")
+(customize-set-variable 'site-builder-author-name "Thibaut Benjamin")
 (customize-set-variable 'site-builder-sidepanel-pic "pic.jpeg")
 (customize-set-variable 'site-builder-sidepanel-description "Post doctorate researcher in computer science at CEA LIST")
 (customize-set-variable

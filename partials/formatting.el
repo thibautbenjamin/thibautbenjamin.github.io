@@ -27,6 +27,8 @@
 (require 'mk-html)
 (require 'sidepanel)
 
+(defvar site-builder-current-format)
+
 (defun tb/site-format-page-content (contents)
   (mk-html "div"
            :class "w3-row"
@@ -54,10 +56,12 @@
             :body (tb/site-format-page-content contents))
   ))
 
-(defun tb/site-format-dwim (contents)
-  (tb/site-format-main-page contents))
+(defun site-builder-format-dwim (contents)
+  (if (equal site-builder-current-format "default")
+      (tb/site-format-page-content contents)
+    (tb/site-format-main-page contents)))
 
-(advice-add 'org-html-inner-template :filter-return #'tb/site-format-dwim)
+(advice-add 'org-html-inner-template :filter-return #'site-builder-format-dwim)
 
 (provide 'formatting)
 ;;; formatting.el ends here

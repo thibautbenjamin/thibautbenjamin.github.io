@@ -26,7 +26,23 @@
 
 (require 'mk-html)
 
-(defun site-builder-main-pages ())
+(defun site-builder-link-to-main-page (name)
+  (let* ((name (file-name-sans-extension name))
+         (display (if (equal name "index") "Home" (capitalize name))))
+    (mk-html "a"
+             :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right"
+             :href (concat name ".html")
+             :body display)))
+
+(defun site-builder-main-pages ()
+  (let ((directory-content (directory-files site-builder-base-directory nil "\\.org$"))
+        (order-list (append site-builder-menu-order '("index.org"))))
+    (append
+     (seq-filter (lambda (item) (not (member item order-list))) directory-content)
+     order-list)))
+
+(defun site-builder-left-menu ()
+  (mapconcat 'site-builder-link-to-main-page (site-builder-main-pages) "\n"))
 
 (defun site-builder-menu-content ()
   (concat
@@ -34,10 +50,7 @@
             :class "w3-bar-item w3-button w3-large w3-hover-none w3-text-indigo"
             :href "/"
             :body (mk-html "b" :body site-builder-site-name))
-   (mk-html "a"
-            :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right"
-            :href "/"
-            :body "Home")))
+   (site-builder-left-menu)))
 
 (defun site-builder-menu ()
   (mk-html "div"

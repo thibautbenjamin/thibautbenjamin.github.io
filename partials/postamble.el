@@ -26,22 +26,60 @@
 
 (require 'mk-html)
 
-(customize-set-variable 'org-html-postamble t)
 (customize-set-variable 'org-html-metadata-timestamp-format "%Y")
 
+(defun site-builder-footer-text ()
+  (mk-html "p"
+           :class "footer"
+           :body (concat "Copyright (c) %T " site-builder-author-name)))
 
-(customize-set-variable
- 'org-html-postamble-format
- (list
-  (list
-   "en"
-   (mk-html "footer"
-            :class "w3-footer w3-center w3-white"
-            :body
-            (mk-html "p"
-                     :class "footer"
-                     :body "Copyright (c) %T %a")))))
+(defun site-builder-footer-info-entry (list)
+  (let ((name (car list))
+        (link (cadr list))
+        (icon (caddr list)))
+    (mk-html "div"
+             :class "w3-bar-item w3-button w3-hover-none"
+             :body
+             (concat
+              (when icon
+                (mk-html "a"
+                         :href link
+                         :body
+                         (mk-html "i"
+                                  :class icon)))
+              (mk-html "a"
+                       :href link
+                       :body name)))))
 
+(defun site-builder-footer-icons ()
+  (mk-html "div"
+           :class "w3-bar"
+           :body
+           (mapconcat #'site-builder-footer-info-entry
+                      site-builder-sidepanel-infos
+                      "\n")))
+
+(defun site-builder-footer-full ()
+  (mk-html "footer"
+           :class "w3-footer w3-center w3-white w3-border-top"
+           :body
+           (concat
+            (mk-html "div"
+                     :class "w3-container w3-text-gray"
+                     :body (concat site-builder-site-name site-builder-sidepanel-description))
+            (site-builder-footer-icons)
+            (site-builder-footer-text))))
+
+(defun site-builder-footer-simple ()
+  (mk-html "footer"
+           :class "w3-footer w3-center w3-white"
+           :body
+           (site-builder-footer-text)))
+
+(defun site-builder-footer ()
+  (if (site-builder-layout-default)
+      (site-builder-footer-full)
+    (site-builder-footer-simple)))
 
 (provide 'postamble)
 ;;; postamble.el ends here
