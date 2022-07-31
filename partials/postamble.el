@@ -79,9 +79,9 @@
            (site-builder-footer-text)))
 
 (defun site-builder-footer ()
-  (if (site-builder-layout-default)
-      (site-builder-footer-full)
-    (site-builder-footer-simple)))
+  (if (equal site-builder-current-layout "index")
+      (site-builder-footer-simple)
+    (site-builder-footer-full)))
 
 (provide 'postamble)
 ;;; postamble.el ends here

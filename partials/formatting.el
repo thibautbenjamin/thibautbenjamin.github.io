@@ -57,9 +57,9 @@
   ))
 
 (defun site-builder-format-dwim (contents)
-  (if (equal site-builder-current-format "default")
-      (tb/site-format-page-content contents)
-    (tb/site-format-main-page contents)))
+  (if (equal site-builder-current-layout "index")
+      (tb/site-format-main-page contents)
+    (tb/site-format-page-content contents)))
 
 (advice-add 'org-html-inner-template :filter-return #'site-builder-format-dwim)
 

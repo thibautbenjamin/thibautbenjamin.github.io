@@ -81,36 +81,23 @@
 (require 'gen-bib)
 
 (defun site-builder-layout ()
-    (or site-builder-layout "default"))
+  (let ((layout
+         (save-excursion
+           (goto-char 0)
+           (when (re-search-forward "^# site\\-builder\\-layout:" nil t)
+             (forward-word)
+             (current-word)))))
+    (or layout "default")))
 
 (defun site-builder-layout-default ()
     (equal (site-builder-layout) "default"))
 
 (defun site-builder-set-format (backend)
+  (setq site-builder-current-layout (site-builder-layout))
   (when (eq backend 'html)
-    (customize-set-variable 'org-html-postamble-format (list (list "en" (site-builder-footer))))
-    (setq site-builder-current-format (site-builder-layout))))
+    (customize-set-variable 'org-html-postamble-format (list (list "en" (site-builder-footer))))))
 
 (customize-set-variable 'org-export-use-babel t)
-
-(defun site-builder-override-examples (example-block _contents info)
-  "Transcode a EXAMPLE-BLOCK element from Org to HTML.
-CONTENTS is nil.  INFO is a plist holding contextual
-information."
-  (message "adviced!")
-  (let ((attributes (org-export-read-attribute :attr_html example-block)))
-    (if (plist-get attributes :textarea)
-        (org-html--textarea-block example-block)
-      (format "<div class=%s>\n%s</div>"
-              (let* ((reference (org-html--reference example-block info))
-                     (a (org-html--make-attribute-string
-                         (if (or (not reference) (plist-member attributes :id))
-                             attributes
-                           (plist-put attributes :id reference)))))
-                (if (org-string-nw-p a) (concat " " a) ""))
-              (org-html-format-code example-block info)))))
-
-(advice-add 'org-html-example-block :override #'site-builder-override-examples)
 
 (defun site-builder-build-site ()
 

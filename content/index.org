@@ -36,5 +36,5 @@ During my PhD I have supervised the practicals Java beginner’s class at Ecole 
 I support free and open source software. My personal experience with it has been that the paid alternative are often worse, albeit sometimes easier to begin. I try to contribute to the projects that I use when I can.
 
 # Local Variables:
-# cite-builder-layout: "index"
+# site-builder-layout: "index"
 # End:
