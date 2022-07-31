@@ -40,12 +40,35 @@
 
 
 (setq org-html-validation-link nil)
-(setq org-html-head-include-scripts nil)
 (setq org-html-head-include-default-style nil)
 (setq org-html-head
       "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />
        <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css\">
        <link rel=\"stylesheet\" href=\"style.css\" />")
+
+
+(setq org-html-head-include-scripts t)
+(setq org-html-scripts
+      "<script>
+         function show(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf(\"w3-show\") == -1) {
+            x.className += \" w3-show\";
+          } else {
+            x.className = x.className.replace(\" w3-show\", \"\");
+          }
+        }
+
+        function showPopup(id) {
+          let container = document.getElementById(id);
+          container.classList.add('show');
+            container.addEventListener('click', (event) => {
+            if (event.target.matches('.popupContainer')) {
+              container.classList.remove('show');
+            }
+          });
+        }
+       </script>")
 
 (setq org-html-content-class "content w3-container")
 
@@ -55,6 +78,7 @@
 (require 'preamble)
 (require 'postamble)
 (require 'formatting)
+(require 'gen-bib)
 
 (defun site-builder-layout ()
     (or site-builder-layout "default"))
@@ -66,6 +90,27 @@
   (when (eq backend 'html)
     (customize-set-variable 'org-html-postamble-format (list (list "en" (site-builder-footer))))
     (setq site-builder-current-format (site-builder-layout))))
+
+(customize-set-variable 'org-export-use-babel t)
+
+(defun site-builder-override-examples (example-block _contents info)
+  "Transcode a EXAMPLE-BLOCK element from Org to HTML.
+CONTENTS is nil.  INFO is a plist holding contextual
+information."
+  (message "adviced!")
+  (let ((attributes (org-export-read-attribute :attr_html example-block)))
+    (if (plist-get attributes :textarea)
+        (org-html--textarea-block example-block)
+      (format "<div class=%s>\n%s</div>"
+              (let* ((reference (org-html--reference example-block info))
+                     (a (org-html--make-attribute-string
+                         (if (or (not reference) (plist-member attributes :id))
+                             attributes
+                           (plist-put attributes :id reference)))))
+                (if (org-string-nw-p a) (concat " " a) ""))
+              (org-html-format-code example-block info)))))
+
+(advice-add 'org-html-example-block :override #'site-builder-override-examples)
 
 (defun site-builder-build-site ()
 
@@ -84,7 +129,6 @@
 
 (customize-set-variable 'org-html-preamble t)
 (customize-set-variable 'org-html-preamble-format (list (list "en" (site-builder-menu))))
-
 
 (customize-set-variable 'org-html-postamble t)
 (add-hook 'org-export-before-processing-hook 'site-builder-set-format)

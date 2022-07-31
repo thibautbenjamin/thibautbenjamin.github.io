@@ -40,6 +40,9 @@
 (add-to-list 'load-path (concat default-directory "partials/"))
 (require 'site-builder)
 
+(customize-set-variable 'org-confirm-babel-evaluate nil)
+(customize-set-variable 'org-babel-result-wrap "%s")
+
 (customize-set-variable 'site-builder-base-directory "./content")
 (customize-set-variable 'site-builder-publishing-directory "./public")
 

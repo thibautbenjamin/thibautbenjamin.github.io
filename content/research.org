@@ -1,4 +1,23 @@
 #+title: My Publications
 
+* Publications
 
-* This is the list of my publications
+** Higher Category Theory
+
+*** Papers
+
+#+name: Higher Category Bibliography
+#+begin_src emacs-lisp :results value html :exports results
+  (gen-bib-import "papers.bib")
+#+end_src
+
+
+ 
+
+
+
+*** My PhD Thesis
+
+
+
+** Runtime Assertion Checking

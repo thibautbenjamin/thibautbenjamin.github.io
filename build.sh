@@ -1,3 +1,3 @@
 #!/bin/sh
 
-emacs -Q --script build-site.el
+emacs -q --script build-site.el
