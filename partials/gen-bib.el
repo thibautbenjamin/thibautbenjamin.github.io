@@ -27,14 +27,11 @@
 (require 'mk-html)
 (require 'parsebib)
 
-(defvar gen-bib--bibliography nil)
-(defvar gen-bib--entry "")
-(defvar gen-bib--tmp-buf nil)
-(defvar gen-bib--file nil)
-(defvar gen-bib--initial-buffer nil)
-
 (defun gen-bib--get (properties name)
-  (cdr (assoc name properties)))
+  (let ((assoc (cdr (assoc name properties))))
+    (if (string-match-p "^=.*=$" name)
+        assoc
+      (and assoc (substring assoc 1 -1)))))
 
 (defun gen-bib--format-element (element prop-name &optional before after format)
   (let ((before (if before (concat before " ") ""))
@@ -119,22 +116,39 @@
                 :class "w3-container w3-hide w3-light-gray"
                 :body abstract))))))
 
-(defun gen-bib--make-citation()
-  (let ((buffer (current-buffer))
-        (btype (car (org-property-values "btype")))
-        (id (car (org-property-values "custom_id"))))
-    (find-file gen-bib--file)
-    (goto-line 0)
-    (re-search-forward (concat "^@" btype "{" id ","))
+(defun gen-bib--literal-entry (properties)
+  (save-excursion
+    (goto-char 0)
+    (search-forward (concat "@"
+                            (gen-bib--get properties "=type=")
+                            "{"
+                            (gen-bib--get properties "=key=")))
     (beginning-of-line)
-    (let ((start (point)))
-      (forward-char (1+ (length btype)))
-      (forward-sexp)
-      (let ((bibentry (buffer-substring-no-properties start (point))))
-        (switch-to-buffer buffer)
-        (concat "@@hugo: {{< bib \"" id "\" >}} {{< highlight bibtex >}}@@"
-                bibentry
-                "@@hugo: {{< / highlight >}}{{< /bib >}}@@")))))
+    (let ((beg (point))
+          (type (gen-bib--get properties "=type=")))
+      (when (parsebib--looking-at-goto-end (concat parsebib--entry-start type "[[:space:]]*[\(\{]"))
+      (let ((end (save-excursion (backward-char)
+                                 (parsebib--match-paren-forward)
+                                 (point))))
+        (buffer-substring-no-properties beg end))))))
+
+(defun gen-bib--format-citation (properties)
+  (let ((id (concat (gen-bib--get properties "=key=") "-cite")))
+    (concat
+    (mk-html "a"
+             :href "#"
+             :onclick (concat "showPopup('" id "')")
+             :class "w3-button w3-hover-none w3-xlarge"
+             :body
+             (mk-html "i" :class "fa-solid fa-quote-right"))
+    (mk-html "div"
+             :id id
+             :class "popupContainer"
+             :body
+             (mk-html "pre"
+                      :class "popup"
+                      :body
+                      (gen-bib--literal-entry properties))))))
 
 (defun gen-bib-format-entry (properties)
   (mk-html "li"
@@ -156,25 +170,37 @@
             (gen-bib--format-eprint properties)
             (gen-bib--format-internal-ressource properties "pdf")
             (gen-bib--format-internal-ressource properties "slides")
-            ;; (gen-bib--add-element (gen-bib--make-citation))
+            (gen-bib--format-citation properties)
             (gen-bib--format-abstract properties))))
 
 
 (defun gen-bib-import (file)
-  (setq gen-bib--file file)
-  (let ((entries (parsebib-parse file))
-        bib)
-    (maphash (lambda (entry properties)
-               (setq bib
-                     (concat
-                      bib
-                      (gen-bib-format-entry properties)
-                      "\n"))
-               bib)
-             entries)
-    (mk-html "ul"
-             :class "biblio"
-             :body bib)))
+  (let ((bib ""))
+    (with-temp-buffer
+      (save-excursion
+        (insert-file-contents file)
+        (goto-char 0)
+        (cl-loop for item = (parsebib-find-next-item)
+                 while item do
+                 (setq bib (concat bib (gen-bib-format-entry (parsebib-read-entry item)))))))
+  bib)
+  )
+
+;; (defun gen-bib-import (file)
+;;   (setq gen-bib--file file)
+;;   (let ((entries (parsebib-parse file))
+;;         bib)
+;;     (maphash (lambda (entry properties)
+;;                (setq bib
+;;                      (concat
+;;                       bib
+;;                       (gen-bib-format-entry properties)
+;;                       "\n"))
+;;                bib)
+;;              entries)
+;;     (mk-html "ul"
+;;              :class "biblio"
+;;              :body bib)))
 
 
 
