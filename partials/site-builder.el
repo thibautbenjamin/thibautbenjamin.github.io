@@ -41,10 +41,15 @@
 
 (setq org-html-validation-link nil)
 (setq org-html-head-include-default-style nil)
-(setq org-html-head
-      "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" />
-       <link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css\">
-       <link rel=\"stylesheet\" href=\"style.css\" />")
+
+(defun site-builder-set-head ()
+  (setq org-html-head
+        (concat
+        "<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\" /> \n"
+        "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css\"> \n"
+        "<link rel=\"stylesheet\" href=\"style.css\" /> \n"
+        (when (equal site-builder-current-layout "talks") "<link rel=\"stylesheet\" href=\"talks.css\" />")
+        )))
 
 
 (setq org-html-head-include-scripts t)
@@ -90,13 +95,11 @@
              (current-word)))))
     (or layout "default")))
 
-(defun site-builder-layout-default ()
-    (equal (site-builder-layout) "default"))
-
 (defun site-builder-set-format (backend)
   (setq site-builder-current-layout (site-builder-layout))
   (when (eq backend 'html)
-    (customize-set-variable 'org-html-postamble-format (list (list "en" (site-builder-footer))))))
+    (customize-set-variable 'org-html-postamble-format (list (list "en" (site-builder-footer))))
+    (site-builder-set-head)))
 
 (customize-set-variable 'org-export-use-babel t)
 
@@ -115,13 +118,16 @@
                :section-numbers nil
                :time-stamp-file nil)))
 
-(customize-set-variable 'org-html-preamble t)
-(customize-set-variable 'org-html-preamble-format (list (list "en" (site-builder-menu))))
 
-(customize-set-variable 'org-html-postamble t)
-(add-hook 'org-export-before-processing-hook 'site-builder-set-format)
+  (customize-set-variable 'org-html-preamble t)
+  (customize-set-variable 'org-html-preamble-format (list (list "en" (site-builder-menu))))
 
-(org-publish-all t))
+  (customize-set-variable 'org-html-postamble t)
+  (add-hook 'org-export-before-processing-hook 'site-builder-set-format)
+
+  (site-builder-set-head)
+
+  (org-publish-all t))
 
 
 (provide 'site-builder)
