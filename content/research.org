@@ -8,16 +8,19 @@
 
 #+name: Higher Category Bibliography
 #+begin_src emacs-lisp :results value html :exports results
-  (gen-bib-import "papers.bib")
+  (gen-bib-import "higher-categories.bib")
 #+end_src
-
-
- 
-
-
 
 *** My PhD Thesis
 
-
+#+name: PhD Bibliography
+#+begin_src emacs-lisp :results value html :exports results
+  (gen-bib-import "thesis.bib")
+#+end_src
 
 ** Runtime Assertion Checking
+
+#+name: RAC Bibliography
+#+begin_src emacs-lisp :results value html :exports results
+  (gen-bib-import "rac.bib")
+#+end_src

@@ -1,0 +1,28 @@
+@inproceedings{benjamin22jfla,
+  author = {Benjamin, Thibaut and Ridoux, F\'elix and Signoles, Julien},
+  title = {Formalisation d'un v\'erificateur efficace d'assertions
+               arithmétiques \`a l'ex\'ecution},
+  booktitle = {Journ\'ees Francophones des Langages Applicatifs (JFLA'22)},
+  year = 2022,
+  pdf={http://thibautbenjamin.github.io/pages/publications/jfla_22.pdf},
+  eprinttype={hal},
+  eprint={hal-03626779},
+  notes={In French},
+  abstract = {La vérification d'assertions à l'exécution est une technique
+  consistant à vérifier la validité d'annotations formelles pendant l'exécution
+  d'un programme. Bien qu'ancienne, cette technique reste encore peu étudiée
+  d'un point de vue théorique. Cet article contribue à pallier ce manque en
+  formalisant un vérificateur d'assertions à l'exécution pour des propriétés
+  arithmétiques entières. La principale difficulté réside dans la modélisation
+  d'un générateur de code pour les propriétés visées qui génère du code à la
+  fois correct et efficace. Ainsi, le code généré repose sur des entiers
+  machines lorsque le générateur peut prouver qu'il est correct de le faire et
+  sur une bibliothèque spécialisée dans l'arithmétique exacte, correcte mais
+  moins efficace, dans les autres cas. Il utilise pour cela un système de
+  types dédié. En outre, la logique considérée pour les propriétés inclue des
+  constructions d'ordre supérieur. L'article présente également une
+  implémentation de ce générateur de code au sein d'E-ACSL, le greffon de
+  Frama-C dédié à la vérification d'assertions à l'exécution, ainsi qu'une
+  première évaluation expérimentale démontrant empiriquement l'efficacité du
+  code généré.}
+}

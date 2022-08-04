@@ -1,0 +1,104 @@
+@InProceedings{benjamin21formalization,
+  author={Benjamin, Thibaut},
+  title={{Formalisation of Dependent Type Theory: The Example of CaTT}},
+  booktitle={27th International Conference on Types for Proofs and Programs (TYPES 2021)},
+  pages={2:1--2:21},
+  series={Leibniz International Proceedings in Informatics (LIPIcs)},
+  ISBN={978-3-95977-254-9},
+  ISSN={1868-8969},
+  year={2022},
+  volume={239},
+  editor={Basold, Henning and Cockx, Jesper and Ghilezan, Silvia},
+  publisher={Schloss Dagstuhl -- Leibniz-Zentrum f{\"u}r Informatik},
+  addres ={Dagstuhl, Germany},
+  URL={https://drops.dagstuhl.de/opus/volltexte/2022/16771},
+  URN={urn:nbn:de:0030-drops-167719},
+  doi={10.4230/LIPIcs.TYPES.2021.2},
+  annote={Keywords: Dependent type theory, homotopy type theory, higher categories, formalisation, Agda, proof assistant},
+  eprinttype={arXiv},
+  eprint={2111.14736},
+  pdf={http://thibautbenjamin.github.io/pages/publications/formalization.pdf},
+  abstract={We present the type theory CaTT, originally introduced by Finster and Mimram to describe globular weak omega-categories,
+    and we formalise this theory in the language of homotopy type theory. Most of the studies about this type theory assume that it is
+    well-formed and satisfy the usual syntactic properties that dependent type theories enjoy, without being completely clear and
+    thorough about what these properties are exactly. We use the formalisation that we provide to list and formally prove all of
+    these meta-properties, thus filling a gap in the foundational aspect. We discuss the key aspects of the formalisation inherent
+    to the theory CaTT, in particular that the absence of definitional equality greatly simplify the study, but also that specific
+    side conditions are challenging to properly model. We present the formalisation in a way that not only handles the type theory
+    CaTT but also all the related type theories that share the same structure, and in particular we show that this formalisation
+    provides a proper ground to the study of the theory MCaTT which describes the globular, monoidal weak omega-categories. The article
+    is accompanied by a development in the proof assistant Agda to actually check the formalisation that we present. },
+}
+
+@article{benjamin22monoidal,
+  title={Monoidal weak omega-categories as models of a type theory},
+  doi={10.1017/S0960129522000172},
+  journal={Mathematical Structures in Computer Science},
+  publisher={Cambridge University Press},
+  author={Benjamin, Thibaut},
+  year={2022},
+  eprinttype = {arXiv},
+  eprint= {2111.14208},
+  pages={1--37},
+  pdf={http://thibautbenjamin.github.io/pages/publications/monoidal.pdf},
+  abstract={Weak omega-categories are notoriously difficult to define because of the very intricate nature of their axioms.
+    Various approaches have been explored based on different shapes given to the cells. Interestingly, homotopy type theory encompasses a definition of
+    weak omega-groupoid in a globular setting, since every type carries such a structure. Starting from this remark, Brunerie could extract this
+    definition of globular weak omega-groupoids, formulated as a type theory. By refining its rules, Finster and Mimram have then defined a type
+    theory called 𝖢𝖺𝖳𝖳 , whose models are weak omega-categories. Here, we generalize this approach to monoidal weak omega-categories.
+    Based on the principle that they should be equivalent to weak omega-categories with only one 0-cell, we are able to derive a type theory 𝖬𝖢𝖺𝖳𝖳
+    whose models are monoidal weak omega-categories. This requires changing the rules of the theory in order to encode the information carried by
+    the unique 0-cell. The correctness of the resulting type theory is shown by defining a pair of translations between our type theory 𝖬𝖢𝖺𝖳𝖳
+    and the type theory 𝖢𝖺𝖳𝖳 . Our main contribution is to show that these translations relate the models of our type theory to the models of
+    the type theory 𝖢𝖺𝖳𝖳 consisting of omega-categories with only one 0-cell by analyzing in details how the notion of models interact with
+    the structural rules of both type theories.},
+}
+
+@article{benjamin21globular,
+  doi={10.48550/ARXIV.2106.04475},
+  author={Benjamin, Thibaut and Finster, Eric and Mimram, Samuel},
+  title={Globular weak omega-categories as models of a type theory},
+  eprinttype={arXiv},
+  eprint={2106.04475},
+  year={2022},
+  pdf={http://thibautbenjamin.github.io/pages/publications/models.pdf},
+  notes={Submitted to Higher Structures},
+  abstract={We study the dependent type theory CaTT, introduced by Finster and Mimram, which presents the theory of weak omega-categories,
+    following the idea that type theories can be considered as presentations of generalized algebraic theories. Our main contribution is a
+    formal proof that the models of this type theory correspond precisely to weak omega-categories, as defined by Maltsiniotis, by generalizing
+    a definition proposed by Grothendieck for weak omega-groupoids: those are defined as suitable presheaves over a cat-coherator,
+    which is a category encoding structure expected to be found in an omega-category. This comparison is established by proving
+    the initiality conjecture for the type theory CaTT, in a way which suggests the possible generalization to a nerve theorem for
+    a certain class of dependent type theories},
+}
+
+@unpublished{benjamin22hottuf,
+  author = {Benjamin Thibaut and Finster Eric and Mimram Samuel},
+  title = {{Globular weak omega-categories as models of a type theory}},
+  notes = {Accepted at the workshop on Homotopy Type Theory / Univalent Foundations},
+  year = {2021},
+  keywords = {rewriting,submitted},
+  pdf = {http://thibautbenjamin.github.io/pages/publications/benjamin22hottuf.pdf}
+}
+
+@inproceedings{benjamin2019suspension,
+  title = {Suspension et Fonctorialit{\'e}: Deux Op{\'e}rations Implicites Utiles en CaTT},
+  author = {Benjamin, Thibaut and Mimram, Samuel},
+  booktitle = {Journ{\'e}es Francophones des Langages Applicatifs},
+  year = {2019},
+  url = {https://hal.inria.fr/hal-01985195/},
+  eprinttype={hal},
+  eprint={hal-01985195},
+  notes={In French},
+  abstract={La notion de omega-catégorie faible est une vaste généralisation de celle de catégorie, qui revêt une importance croissante en mathématiques.
+    Cependant, les définitions qui en ont été proposées à ce jour à ce jour restent difficiles à manipuler en pratique : on ne connaît
+    pas de liste explicite des cohérences qui doivent être présentes dans ces structures et il devient rapidement difficile de vérifier
+    tous les détails qui doivent l’être lors de leur utilisation. Partant de ce constat, Finster et Mimram ont récemment reformulé la définition
+    de Grothendieck et Maltsiniotis des omega-catégories faibles sous forme d’une théorie des types, appelée CaTT. Ceci a posé les bases
+    d’un assistant de preuve, développé par les auteurs, dans lequel les termes typables sont ceux qui correspondent à des cohérences.
+    La formalisation de preuves non-triviales dans ce système a montré la nécessité d’avoir des outils permettant de les automatiser
+    en partie. Dans cette optique, nous présentons ici deux méthodes permettant de générer automatiquement des cohérences de
+    dimension supérieure à partir de cohérences existantes : la suspension et la fonctorialité. Nous montrons qu’elles sont
+    admissibles (c’est-à-dire que leur présence ne modifie pas le pouvoir expressif de la théorie des types) et qu’elles sont utiles en
+    pratique pour alléger les preuves en évitant des redondances.},
+}
