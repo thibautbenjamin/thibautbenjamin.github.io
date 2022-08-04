@@ -28,10 +28,10 @@
 (require 'parsebib)
 
 (defun gen-bib--get (properties name)
-  (let ((assoc (cdr (assoc name properties))))
-    (if (string-match-p "^=.*=$" name)
-        assoc
-      (and assoc (substring assoc 1 -1)))))
+  (let ((val (cdr (assoc name properties))))
+    (if (and val (string-match-p "^{.*}$" val))
+        (substring val 1 -1)
+      val)))
 
 (defun gen-bib--format-element (element prop-name &optional before after format)
   (let ((before (if before (concat before " ") ""))
@@ -56,32 +56,39 @@
 (defvar gen-bib--server-prefix-alist
   '(("doi" . "https://doi.org/")
     ("arxiv" . "https://arxiv.org/abs/")
-    ("hal" . "https://hal.archives-ouvertes.fr/hal-")))
+    ("hal" . "https://hal.archives-ouvertes.fr/")))
 
 (defvar gen-bib--server-logos-alist
   '(("doi" . "doi.gif")
     ("arxiv" . "arxiv-logo-small.jpg")
     ("hal" . "hal.png")))
 
+(defvar gen-bib--server-logo-height-alist
+  '(("doi" . "20em")
+    ("arxiv" . "20em")
+    ("hal" . "12em")))
+
 (defvar gen-bib--icons-alist
   '(("pdf" . "fa-solid fa-file-pdf")
     ("slides" . "fa-solid fa-window-maximize")))
 
-(defun gen-bib--image-property (properties name image link)
+(defun gen-bib--image-property (properties name image link height)
   (let ((val (gen-bib--get properties name)))
     (when val
       (mk-html "a"
-               :class "w3-button w3-hover-none"
+               :class "w3-bar-item w3-button w3-hover-none"
                :href (concat link val)
                :body
                (concat
-                "<img src=\"" image "\" height=30em>")))))
+                "<img src=\"" image "\" height=" height ">")))))
 
 (defun gen-bib--format-server (properties property server)
   (gen-bib--image-property properties
                            property
                            (cdr (assoc server gen-bib--server-logos-alist))
-                           (cdr (assoc server gen-bib--server-prefix-alist))))
+                           (cdr (assoc server gen-bib--server-prefix-alist))
+                           (cdr (assoc server gen-bib--server-logo-height-alist))))
+
 
 (defun gen-bib--format-eprint (properties)
   (let ((type (gen-bib--get properties "eprinttype")))
@@ -94,7 +101,7 @@
   (let ((val (gen-bib--get properties name)))
     (when val
       (mk-html "a"
-               :class "w3-button w3-hover-none w3-xlarge"
+               :class "w3-bar-item w3-button w3-hover-none w3-large"
                :href val
                :body
                (mk-html "i" :class icon)))))
@@ -109,7 +116,7 @@
       (concat
        (mk-html "button"
                :onclick (concat "show ('" id "')")
-               :class "w3-button w3-text-indigo w3-hover-none"
+               :class "w3-bar-item w3-button w3-text-indigo w3-hover-none"
                :body "Abstract ▾")
        (mk-html "div"
                 :id id
@@ -138,7 +145,7 @@
     (mk-html "a"
              :href "#"
              :onclick (concat "showPopup('" id "')")
-             :class "w3-button w3-hover-none w3-xlarge"
+             :class "w3-bar-item w3-button w3-hover-none w3-large"
              :body
              (mk-html "i" :class "fa-solid fa-quote-right"))
     (mk-html "div"
@@ -160,19 +167,29 @@
                      :body
                      (concat
                       (gen-bib--format-mandatory-element properties "title" nil ".")
-                      (gen-bib--format-mandatory-element properties "author" nil ",")
-                      (gen-bib--format-optional-element properties "journal" "in" "," "i")
+                      (gen-bib--format-mandatory-element properties "author" nil ".")
+                      (gen-bib--format-optional-element properties "journal" "In" "," "i")
+                      (gen-bib--format-optional-element properties "booktitle" "In" "," "i")
+                      (gen-bib--format-optional-element properties "series" nil ",")
+                      (gen-bib--format-optional-element properties "volume" "Volume" ",")
+                      (gen-bib--format-optional-element properties "editor" nil ",")
                       (gen-bib--format-optional-element properties "publisher" nil "," "i")
                       (gen-bib--format-optional-element properties "pages" "pages:" ",")
                       (gen-bib--format-mandatory-element properties "year" nil ".  \n")))
-            (gen-bib--format-optional-element properties "notes" nil "  \n")
-            (gen-bib--format-server properties "DOI" "doi")
-            (gen-bib--format-eprint properties)
-            (gen-bib--format-internal-ressource properties "pdf")
-            (gen-bib--format-internal-ressource properties "slides")
-            (gen-bib--format-citation properties)
-            (gen-bib--format-abstract properties))))
-
+            (mk-html "div"
+                     :class "bibnotes"
+                     :body
+                     (gen-bib--format-optional-element properties "notes" nil "\n" "i"))
+            (mk-html "w3-bar"
+                     :class "bibicons"
+                     :body
+                     (concat
+                      (gen-bib--format-server properties "doi" "doi")
+                      (gen-bib--format-eprint properties)
+                      (gen-bib--format-internal-ressource properties "pdf")
+                      (gen-bib--format-internal-ressource properties "slides")
+                      (gen-bib--format-citation properties)
+                      (gen-bib--format-abstract properties))))))
 
 (defun gen-bib-import (file)
   (let ((bib ""))
@@ -182,27 +199,9 @@
         (goto-char 0)
         (cl-loop for item = (parsebib-find-next-item)
                  while item do
-                 (setq bib (concat bib (gen-bib-format-entry (parsebib-read-entry item)))))))
+                 (setq bib (concat bib (gen-bib-format-entry (parsebib-read-entry item nil nil nil t)))))))
   bib)
   )
-
-;; (defun gen-bib-import (file)
-;;   (setq gen-bib--file file)
-;;   (let ((entries (parsebib-parse file))
-;;         bib)
-;;     (maphash (lambda (entry properties)
-;;                (setq bib
-;;                      (concat
-;;                       bib
-;;                       (gen-bib-format-entry properties)
-;;                       "\n"))
-;;                bib)
-;;              entries)
-;;     (mk-html "ul"
-;;              :class "biblio"
-;;              :body bib)))
-
-
 
 (provide 'gen-bib)
 ;;; gen-bib.el ends here
