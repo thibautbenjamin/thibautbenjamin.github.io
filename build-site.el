@@ -45,6 +45,7 @@
 
 (customize-set-variable 'site-builder-base-directory "./content")
 (customize-set-variable 'site-builder-publishing-directory "./public")
+(customize-set-variable 'site-builder-extras-directory "./files")
 
 (customize-set-variable 'site-builder-menu-order '("talks.org" "research.org"))
 

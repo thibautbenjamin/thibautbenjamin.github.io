@@ -32,6 +32,7 @@
 (defcustom site-builder-sidepanel-infos "" nil)
 (defcustom site-builder-base-directory "" nil)
 (defcustom site-builder-publishing-directory "" nil)
+(defcustom site-builder-extras-directory "" nil)
 (defcustom site-builder-menu-order "" nil)
 
 
@@ -120,6 +121,9 @@
                :section-numbers nil
                :time-stamp-file nil)))
 
+  (copy-directory site-builder-extras-directory
+                  site-builder-publishing-directory
+                  nil nil t)
 
   (customize-set-variable 'org-html-preamble t)
   (customize-set-variable 'org-html-preamble-format (list (list "en" (site-builder-menu))))
