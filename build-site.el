@@ -56,6 +56,14 @@
    ("email" "mailto:thibaut.benjamin@polytechnique.edu" "fa-solid fa-envelope")
    ("thibautbenjamin" "http://www.github.com/thibautbenjamin" "fa-brands fa-github")))
 
+
+(customize-set-variable 'site-builder-infobar-items
+                        '(("gitlab" . (icon . "fa-brands fa-gitlab"))
+                          ("github" . (icon . "fa-brands fa-github"))
+                          ("interactive" . (icon . "fa-solid fa-terminal"))
+                          ("slides" . (icon . "fa-solid fa-display"))
+                          ("youtube" . (icon . "fa-brands fa-youtube"))))
+
 (site-builder-build-site)
 
 (message "build complete")

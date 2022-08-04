@@ -79,6 +79,7 @@
 (require 'postamble)
 (require 'formatting)
 (require 'gen-bib)
+(require 'infobar)
 
 (defun site-builder-layout ()
   (let ((layout

@@ -45,5 +45,21 @@
           body
           "\n</"name">")))
 
+(cl-defun mk-html-inline (name &key class id style onclick href body)
+  (let ((class-string (mk-html-arg-string "class" class))
+        (id-string (mk-html-arg-string "id" id))
+        (style-string (mk-html-arg-string "style" style))
+        (onclick-string (mk-html-arg-string "onclick" onclick))
+        (href-string (mk-html-arg-string "href" href)))
+  (concat "<"name " "
+          class-string
+          id-string
+          style-string
+          onclick-string
+          href-string
+          ">"
+          body
+          "</"name">")))
+
 (provide 'mk-html)
 ;;; mk-html.el ends here
