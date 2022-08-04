@@ -1,0 +1,50 @@
+#+title: Software
+
+* Software development
+
+** Research related contribution
+
+*** Frama-C
+Since 2021, I develop on the open-source [[https://frama-c.com/][Frama-C]] software which gives a framework for combining different formal methods for verifying C programs. I mostly work in the [[https://frama-c.com/fc-plugins/e-acsl.html][E-ACSL]] plugin dedicated to runtime assertion checking. My work in this plugin consists in improving on the performance of the generated code, especially for arithmetic annotations in the presence of logic functions via a static analysis. This analysis based on interval arithmetic is quite involved when recursive functions are used.
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("gitlab" . "https://git.frama-c.com/pub/frama-c")))
+#+end_src
+
+*** CaTT- An infinity categorical coherence typechecker
+CaTT is a dependent type theory whose models are the weak \omega-categories. It is implemented in OCaml and I also host an interactive online version available for quick tests
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("github" . "https://github.com/thibautbenjamin/catt")
+     ("interactive" . "https://thibautbenjamin.github.io/catt/")))
+#+end_src
+
+
+*** CaTT-Formalization
+An Agda formalization of the type theory CaTT, as a special case of a framework that I call free globular type theories. This provides a certified interpreter for the bare language CaTT (without syntactic sugar), as well as a setup to prove properties such as decidability of type checking, uniqueness of derivations, and all the lemma on which the categorical analysis of the theory relies.
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("github" . "https://github.com/thibautbenjamin/catt-formalization")))
+#+end_src
+
+
+*** Formalization of representation of symmetric groups
+During a research internship under the supervision of [[https://www.lri.fr/~hivert/][Florent Hivert]], I have formalized the computation of the representations of the symmetric groups and their characters using Young tableaux, in Coq with ssreflect (now MathComp). This project has been intergrated into [[https://github.com/hivert/Coq-Combi][Florent’s development]] of algebraic combinatorics.
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("github" . "https://github.com/thibautbenjamin/ReprSymGroup")))
+#+end_src
+
+
+** Other contribution
+
+*** OcaEmu
+An emulator for the i8080 chip and the space invaders arcade machine written in OCaml.
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("github" . "https://github.com/thibautbenjamin/OcaEmu")))
+#+end_src
+
+# Local Variables:
+# site-builder-layout: "talks"
+# End:
