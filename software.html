@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Software</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" /> 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"> 
+<link rel="stylesheet" href="style.css" /> 
+<link rel="stylesheet" href="talks.css" />
+<script>
+         function show(id) {
+          var x = document.getElementById(id);
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+
+        function showPopup(id) {
+          let container = document.getElementById(id);
+          container.classList.add('show');
+            container.addEventListener('click', (event) => {
+            if (event.target.matches('.popupContainer')) {
+              container.classList.remove('show');
+            }
+          });
+        }
+       </script>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class="w3-top w3-white topbar" >
+<div class="w3-topbar w3-border-indigo w3-white" >
+<div class="w3-container w3-bar w3-border-bottom" >
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-text-indigo" href="/" >
+<b >
+THIBAUT BENJAMIN
+</b>
+</a><a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="software.html" >
+Software
+</a>
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="talks.html" >
+Talks
+</a>
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="research.html" >
+Research
+</a>
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="index.html" >
+Home
+</a><div class="hamburger-menu w3-hide-large" >
+<input id="menu__toggle" type="checkbox" />
+             <label class="menu__btn" for="menu__toggle">
+             <span></span>
+             </label>
+
+<ul class="menu__box" >
+<li ><a class="menu__item" href="index.html" >Home</a></li>
+
+<li ><a class="menu__item" href="research.html" >Research</a></li>
+
+<li ><a class="menu__item" href="talks.html" >Talks</a></li>
+
+<li ><a class="menu__item" href="software.html" >Software</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Software</h1>
+<div class="w3-row" >
+<div class="w3-col s1 m1 l1" >
+&nbsp;
+</div><div class="w3-col s10 m10 l10" >
+
+<div id="outline-container-orgb0c8522" class="outline-1">
+<h1 id="orgb0c8522">Software development</h1>
+<div class="outline-text-1" id="text-orgb0c8522">
+</div>
+<div id="outline-container-orgc311474" class="outline-2">
+<h2 id="orgc311474">Research related contribution</h2>
+<div class="outline-text-2" id="text-orgc311474">
+</div>
+<div id="outline-container-orgf11fd66" class="outline-3">
+<h3 id="orgf11fd66">Frama-C</h3>
+<div class="outline-text-3" id="text-orgf11fd66">
+<p>
+Since 2021, I develop on the open-source <a href="https://frama-c.com/">Frama-C</a> software which gives a framework for combining different formal methods for verifying C programs. I mostly work in the <a href="https://frama-c.com/fc-plugins/e-acsl.html">E-ACSL</a> plugin dedicated to runtime assertion checking. My work in this plugin consists in improving on the performance of the generated code, especially for arithmetic annotations in the presence of logic functions via a static analysis. This analysis based on interval arithmetic is quite involved when recursive functions are used.
+</p>
+<span class="w3-bar infobar" >
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://git.frama-c.com/pub/frama-c" >
+<i class="fa-brands fa-gitlab" >
+
+</i>
+</a>
+</span>
+</div>
+</div>
+
+<div id="outline-container-orgd64192d" class="outline-3">
+<h3 id="orgd64192d">CaTT- An infinity categorical coherence typechecker</h3>
+<div class="outline-text-3" id="text-orgd64192d">
+<p>
+CaTT is a dependent type theory whose models are the weak &omega;-categories. It is implemented in OCaml and I also host an interactive online version available for quick tests
+</p>
+<span class="w3-bar infobar" >
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://github.com/thibautbenjamin/catt" >
+<i class="fa-brands fa-github" >
+
+</i>
+</a>
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://thibautbenjamin.github.io/catt/" >
+<i class="fa-solid fa-terminal" >
+
+</i>
+</a>
+</span>
+</div>
+</div>
+
+
+<div id="outline-container-org386030a" class="outline-3">
+<h3 id="org386030a">CaTT-Formalization</h3>
+<div class="outline-text-3" id="text-org386030a">
+<p>
+An Agda formalization of the type theory CaTT, as a special case of a framework that I call free globular type theories. This provides a certified interpreter for the bare language CaTT (without syntactic sugar), as well as a setup to prove properties such as decidability of type checking, uniqueness of derivations, and all the lemma on which the categorical analysis of the theory relies.
+</p>
+<span class="w3-bar infobar" >
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://github.com/thibautbenjamin/catt-formalization" >
+<i class="fa-brands fa-github" >
+
+</i>
+</a>
+</span>
+</div>
+</div>
+
+
+<div id="outline-container-org98d161f" class="outline-3">
+<h3 id="org98d161f">Formalization of representation of symmetric groups</h3>
+<div class="outline-text-3" id="text-org98d161f">
+<p>
+During a research internship under the supervision of <a href="https://www.lri.fr/~hivert/">Florent Hivert</a>, I have formalized the computation of the representations of the symmetric groups and their characters using Young tableaux, in Coq with ssreflect (now MathComp). This project has been intergrated into <a href="https://github.com/hivert/Coq-Combi">Florent’s development</a> of algebraic combinatorics.
+</p>
+<span class="w3-bar infobar" >
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://github.com/thibautbenjamin/ReprSymGroup" >
+<i class="fa-brands fa-github" >
+
+</i>
+</a>
+</span>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org93d765d" class="outline-2">
+<h2 id="org93d765d">Other contribution</h2>
+<div class="outline-text-2" id="text-org93d765d">
+</div>
+<div id="outline-container-org7326df5" class="outline-3">
+<h3 id="org7326df5">OcaEmu</h3>
+<div class="outline-text-3" id="text-org7326df5">
+<p>
+An emulator for the i8080 chip and the space invaders arcade machine written in OCaml.
+</p>
+<span class="w3-bar infobar" >
+<a class="w3-bar-item w3-button w3-hover-none w3-large" href="https://github.com/thibautbenjamin/OcaEmu" >
+<i class="fa-brands fa-github" >
+
+</i>
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+
+</div><div class="w3-col s1 m1 l1" >
+&nbsp;
+</div>
+</div></div>
+<div id="postamble" class="status">
+<footer class="w3-footer w3-center w3-white w3-border-top" >
+<div class="w3-container w3-text-gray" >
+THIBAUT BENJAMIN,&emsp;Post doctorate researcher in computer science at CEA LIST
+</div><div class="w3-bar" >
+<div class="w3-bar-item w3-button w3-hover-none" >
+<a href="cv.pdf" >
+<i class="fa-solid fa-file-lines" >
+
+</i>
+</a><a href="cv.pdf" >
+cv
+</a>
+</div>
+<div class="w3-bar-item w3-button w3-hover-none" >
+<a href="mailto:thibaut.benjamin@polytechnique.edu" >
+<i class="fa-solid fa-envelope" >
+
+</i>
+</a><a href="mailto:thibaut.benjamin@polytechnique.edu" >
+email
+</a>
+</div>
+<div class="w3-bar-item w3-button w3-hover-none" >
+<a href="http://www.github.com/thibautbenjamin" >
+<i class="fa-brands fa-github" >
+
+</i>
+</a><a href="http://www.github.com/thibautbenjamin" >
+thibautbenjamin
+</a>
+</div>
+</div><p class="footer" >
+Copyright (c) 2022 Thibaut Benjamin
+</p>
+</footer>
+</div>
+</body>
+</html>
