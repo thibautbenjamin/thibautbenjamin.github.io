@@ -70,7 +70,7 @@
 
 (defvar gen-bib--icons-alist
   '(("pdf" . "fa-solid fa-file-pdf")
-    ("slides" . "fa-solid fa-window-maximize")))
+    ("slides" . "fa-solid fa-display")))
 
 (defun gen-bib--image-property (properties name image link height)
   (let ((val (gen-bib--get properties name)))
