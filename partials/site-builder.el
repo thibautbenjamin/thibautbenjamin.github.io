@@ -121,6 +121,8 @@
                :section-numbers nil
                :time-stamp-file nil)))
 
+  (delete-directory site-builder-publishing-directory t)
+
   (copy-directory site-builder-extras-directory
                   site-builder-publishing-directory
                   nil nil t)
