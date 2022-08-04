@@ -30,7 +30,7 @@
   (let* ((name (file-name-sans-extension name))
          (display (if (equal name "index") "Home" (capitalize name))))
     (mk-html "a"
-             :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right"
+             :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium"
              :href (concat name ".html")
              :body display)))
 
@@ -41,6 +41,32 @@
      (seq-filter (lambda (item) (not (member item order-list))) directory-content)
      order-list)))
 
+(defun site-builder-hamburger-filling (name)
+  (let* ((name (file-name-sans-extension name))
+         (display (if (equal name "index") "Home" (capitalize name))))
+  (mk-html-inline "li"
+                  :body
+                  (mk-html-inline "a"
+                                    :class "menu__item"
+                                    :href (concat name ".html")
+                                    :body
+                                    display))))
+
+(defun site-builder-hamburger ()
+  (mk-html "div"
+           :class "hamburger-menu w3-hide-large"
+           :body
+           (concat
+            "<input id=\"menu__toggle\" type=\"checkbox\" />
+             <label class=\"menu__btn\" for=\"menu__toggle\">
+             <span></span>
+             </label>\n\n"
+           (mk-html "ul"
+                    :class "menu__box"
+                    :body
+                    (mapconcat 'site-builder-hamburger-filling (reverse (site-builder-main-pages)) "
+\n")))))
+
 (defun site-builder-left-menu ()
   (mapconcat 'site-builder-link-to-main-page (site-builder-main-pages) "\n"))
 
@@ -50,7 +76,8 @@
             :class "w3-bar-item w3-button w3-large w3-hover-none w3-text-indigo"
             :href "/"
             :body (mk-html "b" :body site-builder-site-name))
-   (site-builder-left-menu)))
+   (site-builder-left-menu)
+   (site-builder-hamburger)))
 
 (defun site-builder-menu ()
   (mk-html "div"

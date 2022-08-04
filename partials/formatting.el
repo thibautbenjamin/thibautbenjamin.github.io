@@ -47,12 +47,15 @@
 (defun tb/site-format-main-page (contents)
   (concat
    (mk-html "div"
-            :class "w3-sidebar w3-bar-block"
+            :class "w3-sidebar w3-bar-block w3-hide-small"
             :style "width:25%;"
             :body (mk-sidepanel))
    (mk-html "div"
-            :class "w3-container"
+            :class "w3-container w3-hide-small"
             :style "margin-left:25%;"
+            :body (tb/site-format-page-content contents))
+   (mk-html "div"
+            :class "w3-container w3-hide-medium w3-hide-large"
             :body (tb/site-format-page-content contents))
   ))
 

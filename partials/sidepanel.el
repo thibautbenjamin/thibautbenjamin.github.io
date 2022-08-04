@@ -70,28 +70,5 @@
             :class "w3-container w3-large"
             :body (mk-sidepanel-infos))))
 
-;; <div class="w3-center infos"> Personal Information </div>
-;; <center><img src={{ .Site.Params.pic }} class="w3-center w3-circle" style="max-width:60%"></center>
-;; <div class="w3-container w3-center w3-text-gray"> <div class="description"> {{ .Site.Params.description }} </div> </div>
-;; <div class="w3-container w3-large">
-;;   <div class="w3-bar-block w3-container">
-;;     {{- range .Site.Params }}
-;;     {{- if reflect.IsMap . }}
-;;     {{ $name := index . "name" }}
-;;     {{ $icon := index . "icon" }}
-;;     {{ $link := index . "link" }}
-;;     <div class="w3-bar-item w3-button w3-hover-none">
-;;       {{- if $icon }}
-;;       <a href={{ $link }}><i class={{ $icon }}></i> </a>
-;;       {{ end -}}
-;;       <a href = {{ $link }}>
-;;         {{ $name }}
-;;       </a>
-;;     </div>
-;;     {{ end -}}
-;;     {{ end -}}
-;;   </div>
-;; </div>
-
 (provide 'sidepanel)
 ;;; sidepanel.el ends here

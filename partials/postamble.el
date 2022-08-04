@@ -73,10 +73,22 @@
             (site-builder-footer-text))))
 
 (defun site-builder-footer-simple ()
-  (mk-html "footer"
-           :class "w3-footer w3-center w3-white"
+  (concat
+   (mk-html "footer"
+            :class "w3-footer w3-center w3-white w3-hide-small"
+            :body
+            (site-builder-footer-text)))
+    (mk-html "footer"
+           :class "w3-footer w3-center w3-white w3-border-top w3-hide-medium w3-hide-large"
            :body
-           (site-builder-footer-text)))
+           (concat
+            (mk-html "div"
+                     :class "w3-container w3-text-gray"
+                     :body (concat site-builder-site-name
+                                   ",&emsp;"
+                                   site-builder-sidepanel-description))
+            (site-builder-footer-icons)
+            (site-builder-footer-text))))
 
 (defun site-builder-footer ()
   (if (equal site-builder-current-layout "index")
