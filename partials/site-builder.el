@@ -33,7 +33,9 @@
 (defcustom site-builder-base-directory "" nil)
 (defcustom site-builder-publishing-directory "" nil)
 (defcustom site-builder-menu-order "" nil)
-(defcustom site-builder-layout "" nil)
+
+
+(defvar site-builder-current-layout nil)
 
 (require 'htmlize)
 (require 'ox-publish)
