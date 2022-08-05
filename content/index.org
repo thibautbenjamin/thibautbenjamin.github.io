@@ -5,7 +5,7 @@
 
 ** Introduction
 
-I am currently a post-doctorate researcher in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs. Before that I was a PhD student at LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]], and I worked on a type theoretic definition of weak omega-categories.
+I am currently a post-doctorate researcher in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs. Before that I was a PhD student at [[https://www.lix.polytechnique.fr/][LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]], and I worked on a type theoretic definition of weak omega-categories.
 
 ** Research Interests
 
@@ -13,7 +13,7 @@ My research interests lie in the intersection between computer science and mathe
 
 I am particularly interested in all the languages whose semantics can be cleanly defined, and enjoy rich algebraic properties, like the functional languages, as I find those encourage good practice and high maintainability. I also like that these languages interact well with proof-assistants (I particularly use Agda and Coq).
 
-I am also interested in higher category theory and homotopy theory, as a way to understand equality and rewriting, as started by the development of homotopy type theory. 
+I am also interested in higher category theory and homotopy theory, as a way to understand equality and rewriting, as started by the development of homotopy type theory.
 
 *** Keywords:
 
