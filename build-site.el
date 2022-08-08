@@ -57,7 +57,9 @@
  'site-builder-sidepanel-infos
  '(("cv" "cv.pdf" "fa-solid fa-file-lines")
    ("email" "mailto:thibaut.benjamin@polytechnique.edu" "fa-solid fa-envelope")
-   ("thibautbenjamin" "http://www.github.com/thibautbenjamin" "fa-brands fa-github")))
+   ("thibautbenjamin" "http://www.github.com/thibautbenjamin" "fa-brands fa-github")
+   ("Thibaut Benjamin" "https://www.researchgate.net/profile/Thibaut-Benjamin" "fa-brands fa-researchgate")
+   ("0000-0002-9481-1896" "https://orcid.org/0000-0002-9481-1896" "fa-brands fa-orcid")))
 
 
 (customize-set-variable 'site-builder-infobar-items
