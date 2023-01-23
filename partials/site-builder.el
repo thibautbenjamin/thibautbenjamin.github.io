@@ -34,13 +34,13 @@
 (defcustom site-builder-publishing-directory "" nil)
 (defcustom site-builder-extras-directory "" nil)
 (defcustom site-builder-menu-order "" nil)
-
+(defcustom site-builder-denote-directory "" nil)
 
 (defvar site-builder-current-layout nil)
 
 (require 'htmlize)
 (require 'ox-publish)
-
+(require 'denote)
 
 (setq org-html-validation-link nil)
 (setq org-html-head-include-default-style nil)
@@ -87,6 +87,7 @@
 (require 'postamble)
 (require 'formatting)
 (require 'gen-bib)
+(require 'site-builder-denote)
 (require 'infobar)
 
 (defun site-builder-layout ()
@@ -121,6 +122,8 @@
                :section-numbers nil
                :time-stamp-file nil)))
 
+  (setq denote-directory (file-truename site-builder-denote-directory))
+
   (delete-directory site-builder-publishing-directory t)
 
   (copy-directory site-builder-extras-directory
@@ -136,7 +139,6 @@
   (site-builder-set-head)
 
   (org-publish-all t))
-
 
 (provide 'site-builder)
 ;;; site-builder.el ends here
