@@ -1,0 +1,16 @@
+#+title: Notes
+
+* Scientific Notes
+
+You can find here a collection of my scientific notes. This are mostly
+personal notes about various topics of interest to me. It can be
+topics that I am learning and formulating in a way that suits me, some
+work that I made and wish to keep, intuitions that I am building and
+more or less vague ideas. They do not aim at being very polished, but
+I hope that they can be an interesting resource for others trying to
+approach the same topics.
+
+#+name: Index
+#+begin_src emacs-lisp :results value raw :exports results
+  (site-builder-denote-import)
+#+end_src
