@@ -67,7 +67,9 @@
                           ("github" . (icon . "fa-brands fa-github"))
                           ("interactive" . (icon . "fa-solid fa-terminal"))
                           ("slides" . (icon . "fa-solid fa-display"))
-                          ("youtube" . (icon . "fa-brands fa-youtube"))))
+                          ("youtube" . (icon . "fa-brands fa-youtube"))
+                          ("benchmarks" . (text . "benchmarks"))
+                          ("version" . (text . "frama-c/e-acsl"))))
 
 (site-builder-build-site)
 

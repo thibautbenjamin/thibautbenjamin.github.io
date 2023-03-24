@@ -36,6 +36,17 @@ During a research internship under the supervision of [[https://www.lri.fr/~hive
 #+end_src
 
 
+** Artifacts for submitted articles
+
+***  Benchmark for abstract interpretation of recursive functions in E-ACSL
+Here you can find the source files and the script we used to benchmark the article on abstract interpretation of recursive function in E-ACSL, along with the version of Frama-C and E-ACSL that we ran the benchmarks on.
+#+begin_src emacs-lisp :results value html :exports results
+  (site-builder-infobar
+   '(("benchmarks" . "https://thibautbenjamin.github.io/software/benchmarks-tap23.zip")
+     ("version" . "https://thibautbenjamin.github.io/software/frama-c-tap23.zip")))
+#+end_src
+
+
 ** Other contribution
 
 *** OcaEmu
