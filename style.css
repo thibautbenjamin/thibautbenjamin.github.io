@@ -49,6 +49,9 @@ a:hover, a:active{
     text-decoration: none;
     font-style: italic;
 }
+a:after {
+    content: "\00a0";
+}
 
 a.footer-link:link, a.footer-link:visited {
     color:lightgray;
@@ -59,6 +62,10 @@ a.footer-link:hover, a.footer-link:active{
     color:lightgray;
     text-decoration: none;
     font-style: italic;
+}
+
+a.footer-link:after {
+    content: "\00a0";
 }
 
 .topbar{
