@@ -5,7 +5,7 @@
 
 ** Introduction
 
-I am currently a post-doctorate researcher in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs. Before that I was a PhD student at [[https://www.lix.polytechnique.fr/][LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]], and I worked on a type theoretic definition of weak omega-categories.
+I am a research associate in computer science at the University of Cambridge. I am in the team of [[https://www.cl.cam.ac.uk/~jv258/][Jamie Vicary]], part of the [[https://www.cl.cam.ac.uk/research/clash/][CLASH]] research group. I work mostly on weak omega-categories and mechanised tools to explore their properties based on dependent type theory. I have a PhD from  [[https://www.lix.polytechnique.fr/][LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]] on a similar topic. I also did a postdoc in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs.
 
 ** Research Interests
 

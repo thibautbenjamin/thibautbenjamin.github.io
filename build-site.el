@@ -52,7 +52,7 @@
 (customize-set-variable 'site-builder-site-name "THIBAUT BENJAMIN")
 (customize-set-variable 'site-builder-author-name "Thibaut Benjamin")
 (customize-set-variable 'site-builder-sidepanel-pic "pic.jpeg")
-(customize-set-variable 'site-builder-sidepanel-description "Post doctorate researcher in computer science at CEA LIST")
+(customize-set-variable 'site-builder-sidepanel-description "Research Associate in computer science at University of Cambridge")
 (customize-set-variable
  'site-builder-sidepanel-infos
  '(("cv" "cv.pdf" "fa-solid fa-file-lines")
