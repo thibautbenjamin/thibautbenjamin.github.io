@@ -9,6 +9,9 @@ Here is a list of the talks that I have given along with the slides
 *** Abstract Interpretation of Recursive Logic Definitions for Efficient Runtime Assertion Checking
 TAP Conference, 2023  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/tap2023.pdf")))}
 
+*** A Coherator for Semi-Cubical Weak \omega-categories
+LHC days  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/lhc2023.pdf")))}
+
 *** Formalizing an Efficient Runtime Assertion Checker for an Arithmetic Language with Functions and Predicates
 I gave this talk twice:
 - SAC-SVT conference, 2023:  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/sac2023.pdf")))}
