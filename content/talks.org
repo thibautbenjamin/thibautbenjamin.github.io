@@ -6,6 +6,14 @@
 Here is a list of the talks that I have given along with the slides
 (when applicable).
 
+*** Abstract Interpretation of Recursive Logic Definitions for Efficient Runtime Assertion Checking
+TAP Conference, 2023  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/tap2023.pdf")))}
+
+*** Formalizing an Efficient Runtime Assertion Checker for an Arithmetic Language with Functions and Predicates
+I gave this talk twice:
+- SAC-SVT conference, 2023:  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/sac2023.pdf")))}
+- LVP-CLPA-HIFI joint research days, 2023:  src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/lvp-clap-hifi2023.pdf")))}
+
 *** Formalisation d'un vérificateur efficace d'assertions arithmétiques à l'exécution [fr]
 Journées Francophones des Languages Applicatifs (JFLA), Saint Médard d'Excideuil, 2022 src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/2022jfla.pdf")))}
 
@@ -26,7 +34,7 @@ I gave various iterations of this talk at different seminars:
 
 
 *** Théorie des types pour les catégories faibles monoidales [fr],
-Journées LHC, Lyon, 2019 src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/2019lhc.pdf")))}
+LHC days, Lyon, 2019 src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/2019lhc.pdf")))}
 
 *** Automatisation partielle de preuves dans CaTT, l'exemple de la Suspension [fr],
 Journées Francophones des Langages Applicatifs (JFLA), Les Rousses, 2019 src_emacs-lisp[:results value html :exports results]{(site-builder-infobar-inline '(("slides" . "slides/2019jfla.pdf")))}

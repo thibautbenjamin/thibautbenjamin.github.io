@@ -1,3 +1,59 @@
+@inproceedings{benjamin23tap,
+  author = {Benjamin, Thibaut and Signoles, Julien},
+  title = {{Abstract Interpretation of Recursive Logic Definitions for
+               Efficient Runtime Assertion Checking}},
+  booktitle = {International Conference on Tests and Proofs (TAP)},
+  year = 2023,
+  month = jul,
+  pdf = {http://thibautbenjamin.github.io/papers/tap2023.pdf},
+  slides = {http://thibautbenjamin.github.io/slides/tap2023.pdf},
+  note = {Accepted for publication},
+  bestpaper = {Best Paper Award},
+  abstract = {Runtime Assertion Checking (RAC) is a lightweight formal method
+  for verifying at runtime code properties written in a formal specification
+  language. One of the main challenge of RAC is to check the properties
+  efficiently, while emitting sound verdicts. In particular, arithmetic
+  properties are only efficiently verified using machine integers, yet
+  soundness can only be achieved by using an exact but slower exact arithmetic
+  library.
+  This paper presents how E-ACSL, a RAC tool for C programs, applies
+  abstract interpretation for efficiently and soundly supporting arithmetic
+  properties. Abstract interpretation provides
+  sound static information regarding the size of terms involved in
+  runtime assertions in order to choose at compile time whether
+  machine integers or exact arithmetic will be used at runtime on a case by case
+  basis. Our specification language includes recursive user-defined logic
+  functions and predicates, for which we rely on fast fixpoint operators based
+  on widening of abstract values.}
+}
+
+@inproceedings{benjamin23sac,
+  author = {Benjamin, Thibaut and Signoles, Julien},
+  title = {{Formalizing an Efficient Runtime Assertion Checker for an
+               Arithmetic Language with Functions and Predicates}},
+  booktitle = {Symposium On Applied Computing (SAC)},
+  year = 2023,
+  month = mar,
+  pdf = {http://thibautbenjamin.github.io/papers/sac2023.pdf},
+  slides = {http://thibautbenjamin.github.io/slides/sac2023.pdf},
+  abstract = {Runtime Assertion Checking (RAC) is a lightweight formal method
+  that verifies formal code annotations, typically assertions, at runtime.
+  The main RAC challenge consists in generating code that is both
+  sound and efficient for checking expressive properties. In
+  particular, checking formal arithmetic properties usually requires
+  to use machine integer arithmetic to be efficient, but needs to rely
+  on an exact yet slower arithmetic library to be sound.
+
+  This paper formalizes an efficient RAC tool for arithmetic
+  properties, which may include user-defined functions and predicates.
+  Efficient code generation for these routines is based on
+  specialization, allowing to generate efficient functions using
+  machine arithmetic when possible, or slower functions relying on
+  exact arithmetic, according to the calling context. This
+  formalization is implemented in E-ACSL, a runtime assertion checker
+  for C programs.}
+}
+
 @inproceedings{benjamin22jfla,
   author = {Benjamin, Thibaut and Ridoux, F\'elix and Signoles, Julien},
   title = {Formalisation d'un v\'erificateur efficace d'assertions

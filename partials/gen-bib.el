@@ -175,6 +175,7 @@
                       (gen-bib--format-optional-element properties "editor" nil ",")
                       (gen-bib--format-optional-element properties "publisher" nil "," "i")
                       (gen-bib--format-optional-element properties "pages" "pages:" ",")
+                      (gen-bib--format-optional-element properties "bestpaper"  nil "." "b")
                       (gen-bib--format-mandatory-element properties "year" nil ".  \n")))
             (mk-html "div"
                      :class "bibnotes"
