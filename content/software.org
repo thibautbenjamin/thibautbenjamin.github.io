@@ -5,7 +5,7 @@
 ** Research related contribution
 
 *** Frama-C
-Since 2021, I develop on the open-source [[https://frama-c.com/][Frama-C]] software which gives a framework for combining different formal methods for verifying C programs. I mostly work in the [[https://frama-c.com/fc-plugins/e-acsl.html][E-ACSL]] plugin dedicated to runtime assertion checking. My work in this plugin consists in improving on the performance of the generated code, especially for arithmetic annotations in the presence of logic functions via a static analysis. This analysis based on interval arithmetic is quite involved when recursive functions are used.
+Between 2021 and 2023, I developped on the open-source [[https://frama-c.com/][Frama-C]] software which gives a framework for combining different formal methods for verifying C programs. I mostly work in the [[https://frama-c.com/fc-plugins/e-acsl.html][E-ACSL]] plugin dedicated to runtime assertion checking. My work in this plugin consists in improving on the performance of the generated code, especially for arithmetic annotations in the presence of logic functions via a static analysis. This analysis based on interval arithmetic is quite involved when recursive functions are used.
 #+begin_src emacs-lisp :results value html :exports results
   (site-builder-infobar
    '(("gitlab" . "https://git.frama-c.com/pub/frama-c")))
@@ -29,7 +29,7 @@ An Agda formalization of the type theory CaTT, as a special case of a framework 
 
 
 *** Formalization of representation of symmetric groups
-During a research internship under the supervision of [[https://www.lri.fr/~hivert/][Florent Hivert]], I have formalized the computation of the representations of the symmetric groups and their characters using Young tableaux, in Coq with ssreflect (now MathComp). This project has been intergrated into [[https://github.com/hivert/Coq-Combi][Florent’s development]] of algebraic combinatorics.
+During a research internship under the supervision of [[https://www.lri.fr/~hivert/][Florent Hivert]], I have formalized the computation of the representations of the symmetric groups and their characters using Young tableaux, in Coq with ssreflect (now MathComp). This project has been integrated into [[https://github.com/hivert/Coq-Combi][Florent’s development]] of algebraic combinatorics.
 #+begin_src emacs-lisp :results value html :exports results
   (site-builder-infobar
    '(("github" . "https://github.com/thibautbenjamin/ReprSymGroup")))
