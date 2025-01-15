@@ -1,3 +1,29 @@
+@online{benjamin2024generating,
+      title={Generating Higher Identity Proofs in Homotopy Type Theory},
+      author={Thibaut Benjamin},
+      year={2024},
+      eprint={2412.01667},
+      archivePrefix={arXiv},
+      keywords={preprint},
+      pdf={http://thibautbenjamin.github.io/papers/catt-to-hott.pdf},
+      abstract={Finster and Mimram have defined a dependent type
+                  theory called CaTT, which describes the structure of
+                  omega-categories. Types in homotopy type theory with
+                  their higher identity types form weak
+                  omega-groupoids, so they are in particular weak
+                  omega-categories. In this article, we show that this
+                  principle makes homotopy type theory into a model of
+                  CaTT, by defining a translation principle that
+                  interprets an operation on the cell of an
+                  omega-category as an operation on higher identity
+                  types. We then illustrate how this translation
+                  allows to leverage several mechanisation principles
+                  that are available in CaTT, to reduce the proof
+                  effort required to derive results about the
+                  structure of identity types, such as the existence
+                  of an Eckmann-Hilton cell. },
+}
+
 @online{benjamin_invertibility_2024,
   title={Invertible cells in ω-categories},
   author={Thibaut Benjamin and Ioannis Markakis},
@@ -43,24 +69,26 @@
                   computads. },
 }
 
-@misc{benjamin2024duality,
-      title={Opposites of weak ω-categories and the suspension and hom
-                  adjunction},
+@misc{benjamin2024hom,
+      title={Hom $\omega$-categories of a computad are free},
       author={Thibaut Benjamin and Ioannis Markakis},
       year={2024},
       eprinttype={arXiv},
       eprint={2402.01611},
       doi={10.48550/arXiv.2402.01611},
       primaryClass={math.CT},
-      pdf={http://thibautbenjamin.github.io/papers/duality2024.pdf},
-      abstract={We define inductively the opposites of a weak globular
-                  ω-category with respect to a set of dimensions, and
-                  we show that the properties of being free on a
-                  globular set of a computad are preserved under
-                  forming opposites. We then provide a new description
-                  of hom ω-categories, and show that the opposites of
-                  a hom ω-category are hom ω-category of opposites of
-                  the original ω-category. },
+      pdf={http://thibautbenjamin.github.io/papers/hom.pdf},
+      abstract={ We provide a new description of the hom functor on
+                  weak ω-categories, and we show that it admits a left
+                  adjoint that we call the suspension functor. We then
+                  show that the hom functor preserves the property of
+                  being free on a computad, in contrast to the hom
+                  functor for strict ω-categories. Using the same
+                  technique, we define the opposite of an ω-category
+                  with respect to a set of dimensions, and we show
+                  that this construction also preserves the property
+                  of being free on a computad. Finally, we show that
+                  the constructions of opposites and homs commute. },
 }
 
 @InProceedings{benjamin21formalization,
@@ -157,12 +185,15 @@
   doi={10.48550/ARXIV.2106.04475},
   author={Benjamin, Thibaut and Finster, Eric and Mimram, Samuel},
   title={Globular weak ω-categories as models of a type theory},
+  journal = {Higher Structures},
+  volume = {8},
+  number = {2},
+  pages = {1--69},
   eprinttype={arXiv},
   eprint={2106.04475},
   year={2024},
   pdf={http://thibautbenjamin.github.io/papers/hs2021.pdf},
   slides={http://thibautbenjamin.github.io/slides/2022cirm.pdf},
-  notes={Accepted in Higher Structures},
   abstract={We study the dependent type theory CaTT, introduced by
                   Finster and Mimram, which presents the theory of
                   weak ω-categories, following the idea that type
