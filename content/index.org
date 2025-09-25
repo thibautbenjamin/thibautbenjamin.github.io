@@ -5,7 +5,7 @@
 
 ** Introduction
 
-I am a research associate in computer science at the University of Cambridge. I am in the team of [[https://www.cl.cam.ac.uk/~jv258/][Jamie Vicary]], part of the [[https://www.cl.cam.ac.uk/research/clash/][CLASH]] research group. I work mostly on weak omega-categories and mechanised tools to explore their properties based on dependent type theory. I have a PhD from  [[https://www.lix.polytechnique.fr/][LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]] on a similar topic. I also did a postdoc in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I work with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs.
+I am a maître de conférences (associate professor) in computer science at [[https://lmf.cnrs.fr/][LMF]] (laboratoire méthodes formelles), in Université Paris-Saclay. I work mostly on weak omega-categories and mechanised tools to explore their properties based on dependent type theory. I got my PhD from  [[https://www.lix.polytechnique.fr/][LIX, Ecole Polytechnique]] under the direction of [[http://www.lix.polytechnique.fr/Labo/Samuel.Mimram//][Samuel Mimram]] and [[https://ericfinster.github.io/][Eric Finster]], and I have worked as a postdoc at the University of Cambridge in the team of [[https://www.cl.cam.ac.uk/~jv258/][Jamie Vicary]], part of the [[https://www.cl.cam.ac.uk/research/clash/][CLASH]] research group.  I also did a postdoc in the development team of [[https://frama-c.com/][Frama-C]] at [[https://list.cea.fr/en/][CEA List]] where I worked with [[https://julien-signoles.fr/][Julien Signoles]] on runtime verification of C programs.
 
 ** Research Interests
 
@@ -33,7 +33,7 @@ Beside my work as a computer scientist, I am interested in science in general as
 During my PhD I have supervised the practicals Java beginner’s class at Ecole Polytechnique for three years, and for its follow-up class for two years. I have also done tutoring sessions in python and algorithmics for one year. During this time, I tried to apply as much as possible all the techniques that I notice in good science communicators to provide a teaching that is motivating and to the point. Unfortunately, my current contract does not allow me to teach and I miss it.
 
 *** Free and open source software
-I support free and open source software. My personal experience with it has been that the paid alternative are often worse, albeit sometimes easier to begin. I try to contribute to the projects that I use when I can.
+I support free and open source software. My personal experience with it has been that paid alternatives are often worse, albeit sometimes easier to begin. I try to contribute to the projects that I use when I can.
 
 # Local Variables:
 # site-builder-layout: "index"
