@@ -34,6 +34,7 @@
 (defcustom site-builder-publishing-directory "" nil)
 (defcustom site-builder-extras-directory "" nil)
 (defcustom site-builder-menu-order "" nil)
+(defcustom site-builder-base-address "" nil)
 
 
 (defvar site-builder-current-layout nil)

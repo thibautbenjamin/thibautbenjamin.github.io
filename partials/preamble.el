@@ -31,7 +31,7 @@
          (display (if (equal name "index") "Home" (capitalize name))))
     (mk-html "a"
              :class "w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium"
-             :href (concat name ".html")
+             :href (concat site-builder-base-address name ".html")
              :body display)))
 
 (defun site-builder-main-pages ()

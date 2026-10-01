@@ -43,6 +43,7 @@
 (customize-set-variable 'org-confirm-babel-evaluate nil)
 (customize-set-variable 'org-babel-result-wrap "%s")
 
+(customize-set-variable 'site-builder-base-address "https://thibautbenjamin.github.io/")
 (customize-set-variable 'site-builder-base-directory "./content")
 (customize-set-variable 'site-builder-publishing-directory "./public")
 (customize-set-variable 'site-builder-extras-directory "./files")
