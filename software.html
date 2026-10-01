@@ -41,7 +41,10 @@
 <b >
 THIBAUT BENJAMIN
 </b>
-</a><a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="software.html" >
+</a><a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="VnV.html" >
+Vnv
+</a>
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="software.html" >
 Software
 </a>
 <a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="talks.html" >
@@ -49,6 +52,9 @@ Talks
 </a>
 <a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="research.html" >
 Research
+</a>
+<a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="teaching.html" >
+Teaching
 </a>
 <a class="w3-bar-item w3-button w3-large w3-hover-none w3-border-white w3-bottombar w3-hover-border-indigo w3-right w3-hide-small w3-hide-medium" href="index.html" >
 Home
@@ -61,11 +67,15 @@ Home
 <ul class="menu__box" >
 <li ><a class="menu__item" href="index.html" >Home</a></li>
 
+<li ><a class="menu__item" href="teaching.html" >Teaching</a></li>
+
 <li ><a class="menu__item" href="research.html" >Research</a></li>
 
 <li ><a class="menu__item" href="talks.html" >Talks</a></li>
 
 <li ><a class="menu__item" href="software.html" >Software</a></li>
+
+<li ><a class="menu__item" href="VnV.html" >Vnv</a></li>
 </ul>
 </div>
 </div>
@@ -79,17 +89,17 @@ Home
 &nbsp;
 </div><div class="w3-col s10 m10 l10" >
 
-<div id="outline-container-orgeeb808d" class="outline-1">
-<h1 id="orgeeb808d">Software development</h1>
-<div class="outline-text-1" id="text-orgeeb808d">
+<div id="outline-container-org3918853" class="outline-1">
+<h1 id="org3918853">Software development</h1>
+<div class="outline-text-1" id="text-org3918853">
 </div>
-<div id="outline-container-org5af8aa9" class="outline-2">
-<h2 id="org5af8aa9">Research related contribution</h2>
-<div class="outline-text-2" id="text-org5af8aa9">
+<div id="outline-container-orgddf58fb" class="outline-2">
+<h2 id="orgddf58fb">Research related contribution</h2>
+<div class="outline-text-2" id="text-orgddf58fb">
 </div>
-<div id="outline-container-orgf148b52" class="outline-3">
-<h3 id="orgf148b52">Frama-C</h3>
-<div class="outline-text-3" id="text-orgf148b52">
+<div id="outline-container-orgd681803" class="outline-3">
+<h3 id="orgd681803">Frama-C</h3>
+<div class="outline-text-3" id="text-orgd681803">
 <p>
 Between 2021 and 2023, I developped on the open-source <a href="https://frama-c.com/">Frama-C</a> software which gives a framework for combining different formal methods for verifying C programs. I mostly work in the <a href="https://frama-c.com/fc-plugins/e-acsl.html">E-ACSL</a> plugin dedicated to runtime assertion checking. My work in this plugin consists in improving on the performance of the generated code, especially for arithmetic annotations in the presence of logic functions via a static analysis. This analysis based on interval arithmetic is quite involved when recursive functions are used.
 </p>
@@ -103,9 +113,9 @@ Between 2021 and 2023, I developped on the open-source <a href="https://frama-c.
 </div>
 </div>
 
-<div id="outline-container-org70d6241" class="outline-3">
-<h3 id="org70d6241">CaTT- An infinity categorical coherence typechecker</h3>
-<div class="outline-text-3" id="text-org70d6241">
+<div id="outline-container-org7338fab" class="outline-3">
+<h3 id="org7338fab">CaTT- An infinity categorical coherence typechecker</h3>
+<div class="outline-text-3" id="text-org7338fab">
 <p>
 CaTT is a dependent type theory whose models are the weak &omega;-categories. It is implemented in OCaml and I also host an interactive online version available for quick tests
 </p>
@@ -125,9 +135,9 @@ CaTT is a dependent type theory whose models are the weak &omega;-categories. It
 </div>
 
 
-<div id="outline-container-orgd3cd77c" class="outline-3">
-<h3 id="orgd3cd77c">CaTT-Formalization</h3>
-<div class="outline-text-3" id="text-orgd3cd77c">
+<div id="outline-container-orgae7f370" class="outline-3">
+<h3 id="orgae7f370">CaTT-Formalization</h3>
+<div class="outline-text-3" id="text-orgae7f370">
 <p>
 An Agda formalization of the type theory CaTT, as a special case of a framework that I call free globular type theories. This provides a certified interpreter for the bare language CaTT (without syntactic sugar), as well as a setup to prove properties such as decidability of type checking, uniqueness of derivations, and all the lemma on which the categorical analysis of the theory relies.
 </p>
@@ -142,9 +152,9 @@ An Agda formalization of the type theory CaTT, as a special case of a framework 
 </div>
 
 
-<div id="outline-container-org2103f11" class="outline-3">
-<h3 id="org2103f11">Formalization of representation of symmetric groups</h3>
-<div class="outline-text-3" id="text-org2103f11">
+<div id="outline-container-org56e3505" class="outline-3">
+<h3 id="org56e3505">Formalization of representation of symmetric groups</h3>
+<div class="outline-text-3" id="text-org56e3505">
 <p>
 During a research internship under the supervision of <a href="https://www.lri.fr/~hivert/">Florent Hivert</a>, I have formalized the computation of the representations of the symmetric groups and their characters using Young tableaux, in Coq with ssreflect (now MathComp). This project has been integrated into <a href="https://github.com/hivert/Coq-Combi">Florent’s development</a> of algebraic combinatorics.
 </p>
@@ -160,13 +170,13 @@ During a research internship under the supervision of <a href="https://www.lri.f
 </div>
 
 
-<div id="outline-container-org55b18ed" class="outline-2">
-<h2 id="org55b18ed">Artifacts for submitted articles</h2>
-<div class="outline-text-2" id="text-org55b18ed">
+<div id="outline-container-org9823826" class="outline-2">
+<h2 id="org9823826">Artifacts for submitted articles</h2>
+<div class="outline-text-2" id="text-org9823826">
 </div>
-<div id="outline-container-org1734532" class="outline-3">
-<h3 id="org1734532">Benchmark for abstract interpretation of recursive functions in E-ACSL</h3>
-<div class="outline-text-3" id="text-org1734532">
+<div id="outline-container-org94e1d64" class="outline-3">
+<h3 id="org94e1d64">Benchmark for abstract interpretation of recursive functions in E-ACSL</h3>
+<div class="outline-text-3" id="text-org94e1d64">
 <p>
 Here you can find the source files and the script we used to benchmark the article on abstract interpretation of recursive function in E-ACSL, along with the version of Frama-C and E-ACSL that we ran the benchmarks on.
 </p>
@@ -183,13 +193,13 @@ frama-c/e-acsl
 </div>
 
 
-<div id="outline-container-orgd35e88a" class="outline-2">
-<h2 id="orgd35e88a">Other contribution</h2>
-<div class="outline-text-2" id="text-orgd35e88a">
+<div id="outline-container-orgc624904" class="outline-2">
+<h2 id="orgc624904">Other contribution</h2>
+<div class="outline-text-2" id="text-orgc624904">
 </div>
-<div id="outline-container-org15225c2" class="outline-3">
-<h3 id="org15225c2">OcaEmu</h3>
-<div class="outline-text-3" id="text-org15225c2">
+<div id="outline-container-org1828f7d" class="outline-3">
+<h3 id="org1828f7d">OcaEmu</h3>
+<div class="outline-text-3" id="text-org1828f7d">
 <p>
 An emulator for the i8080 chip and the space invaders arcade machine written in OCaml.
 </p>
