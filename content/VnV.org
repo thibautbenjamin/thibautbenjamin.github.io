@@ -1,0 +1,9 @@
+#+title: Tests, Vérification, Validation
+
+* Amphis
+
++ Amphi 1 - Introduction et présentation des méthodes
+
+* TD
+
++ TD 1 - Spécifications informelles

@@ -47,7 +47,7 @@
 (customize-set-variable 'site-builder-publishing-directory "./public")
 (customize-set-variable 'site-builder-extras-directory "./files")
 
-(customize-set-variable 'site-builder-menu-order '("talks.org" "research.org"))
+(customize-set-variable 'site-builder-menu-order '("talks.org" "research.org" "teaching.org"))
 
 (customize-set-variable 'site-builder-site-name "THIBAUT BENJAMIN")
 (customize-set-variable 'site-builder-author-name "Thibaut Benjamin")
