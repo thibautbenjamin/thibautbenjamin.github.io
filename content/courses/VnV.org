@@ -4,8 +4,8 @@ Tests, Vérification, Validation
 
 ** Amphis
 
-+ [[file:teaching/VnV26/amphi1.pdf][Amphi 1]] - Introduction et présentation des méthodes
++ [[http://thibautbenjamin.github.io/teaching/VnV26/amphi1.pdf][Amphi 1]] - Introduction et présentation des méthodes
 
 ** TD
 
-+ [[file:teaching/VnV26/TD1.pdf][TD 1]] - Spécifications informelles
++ [[http://thibautbenjamin.github.io/teaching/VnV26/TD1.pdf][TD 1]] - Spécifications informelles
