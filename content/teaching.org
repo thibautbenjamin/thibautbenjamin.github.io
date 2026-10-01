@@ -1,15 +1,17 @@
 #+title: Teaching
 
 
-* Polytech Paris-Saclay
+* Enseignement
+
+** Polytech Paris-Saclay
 
 Voici une liste des cours que j'enseigne à Polytech Paris-Saclay
 
 + [[https://thibautbenjamin.github.io/cours-polytech-peip2-algo/index/index.xml][Introduction à l'algorithmique et à la complexité]], PEIP2, 2025-2027
 + [[https://thibautbenjamin.github.io/cours-polytech-peip2-algo/005T/index.xml][Cours d'option informatique]], PEIP2, 2025-2027
-+ [[file:VnV.org][Test, Vérification et validation]], APP4, 2026-2027
++ [[file:courses/VnV.org][Test, Vérification et validation]], APP4, 2026-2027
 
-* Autres
+** Autres
 
 
 
